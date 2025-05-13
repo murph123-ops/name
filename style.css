@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    margin: 0; /* Miejsce na fixed header, dostosuj do wysokości nagłówka */
+    display: flex;       /* Użyjemy flex na body, by stopka była na dole */
+    flex-direction: column;
+    min-height: 100vh;   /* Minimalna wysokość równa wysokości okna */
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+header {
+    /* Position fixed zostanie dodane w kroku 3 */
+    height: 50px; /* Przykładowa stała wysokość nagłówka */
+    position: sticky;
+    top: 0px;
+}
+
+header h1 { margin: 0; font-size: 1.5em; }
+nav { background-color: #555; padding: 5px 20px; font-size: 0.9em;}
+
+/* Flex dla body, aby główna część rosła, a stopka była na dole */
+.main-container {
+    flex-grow: 1; /* Pozwala tej części zająć dostępną przestrzeń */
+    /* display: flex zostanie dodane w kroku 4 */
+}
+
+main {
+    background-color: #f4f4f4;
+    padding: 20px;
+    /* flex-grow zostanie dodane w kroku 4 */
+}
+
+aside {
+    background-color: #e2e2e2;
+    padding: 20px;
+    /* flex-basis / flex-grow zostanie dodane w kroku 4 */
+}
+
+section.articles {
+    border: 1px dashed blue; /* Pomocnicza ramka */
+    padding: 10px;
+    /* Flexbox zostanie dodany w kroku 4 */
+    min-height: 400px; /* WAŻNE DLA ALIGN-CONTENT: Dajmy sekcji minimalną wysokość */
+}
+
+article {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-sizing: border-box; /* Padding wliczony w rozmiar */
+     /* position: relative zostanie dodane w kroku 3 */
+     /* flex-basis zostanie dodane w kroku 4 */
+     /* margin/gap zostanie dodane w kroku 4 */
+     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+footer {
+    text-align: center;
+    margin-top: auto; /* Wypycha stopkę na dół w kontenerze flex (body) */
+    padding: 15px 20px;
+}
+
+.badge {
+    background-color: red;
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.75em;
+    border-radius: 4px;
+    font-weight: bold;
+    /* position: absolute zostanie dodane w kroku 3 */
+}
